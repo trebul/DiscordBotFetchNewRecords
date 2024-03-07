@@ -22,14 +22,15 @@ class DiscordFunctions {
     }
     async setSeperateReply(message) {
         let reply = message.content.split(' ')[1];
-        if (reply === 'yes' || reply === 'no' || reply === 'true' || reply === 'false' || reply === '1' || reply === '0') {
+        reply = reply.toLowerCase();
+        const possibleReplies = ['yes', 'no', 'true', 'false', '1', '0'];
+        if (possibleReplies.includes(reply)) {
             reply = reply === 'yes' || reply === 'true' || reply === '1' ? true : false;
             await this.checkServer(message, reply, 'toggleSeperateUserId');
             message.reply(`Reply set to ${reply}`);
+            return;
         }
-        else {
-            message.reply(`Invalid reply, please use yes or no`);
-        }
+        message.reply('Please use yes/no/true/false/1/0');
     }
     async setDate(message) {
         let date = message.content.split(' ')[1];
