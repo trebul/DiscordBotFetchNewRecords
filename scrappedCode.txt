@@ -1,0 +1,35 @@
+        // gen and time tbd
+        let regexString = '\\SG•[0-9]{0,2}\\s*\\S\\s•\\s\\S\\s*[1-9]{1,2}[h,m]\\S • &lt;@[0-9]{18}&gt;';
+        const regex = new RegExp(regexString);
+        // Process the leaderboard here
+        const matchingCards = leaderboard.match(regex);
+        if (matchingCards?.length > 0) {
+            return matchingCards;
+        }
+        else {
+            const regexFallback = '\\SG•[0-9]{0,2}\\s*\\S\\s•\\s\\S\\s*[1-9]{1,2}[h,m]\\S* • <@[0-9]{18}>';
+            const fallbackRegex = new RegExp(regexFallback);
+            const fallbackCards = leaderboard.match(fallbackRegex);
+            if (fallbackCards?.length > 0) {
+                return fallbackCards;
+            }
+            else {
+                const regexPattern = '\\SG•[0-9]{0,2}\\s*`\\s*•\\s*`\\s*[0-9]{1,2}\\s*[h,m]`\\s*•\\s*<@[0-9]{18}>';
+                const fallbackCards = leaderboard.match(regexPattern);
+                if (fallbackCards?.length > 0) {
+                    return fallbackCards;
+                }
+            }
+            return null;
+        }
+
+   // const guildId = newMessage.guild ? newMessage.guild.id : null;
+   // if (guildId == 642431753302048779) {
+   //     const channel = client.channels.cache.get(process.env.CHANNEL_ID);
+   //     channel.send(`Spawn Time: ${spawnTime}, spawn Gen: ${spawnGen}, spawn Character: ${charName}, spawn User: ${spawnUser}`); // Send the message to the channel
+   //     channel.send(spawnUser); //for phone user aka me haha
+   // }
+   // if (guildId == 1053239934590406696) {
+   //     const channel = client.channels.cache.get(process.env.ABU_CHANNEL_ID);
+   //     channel.send(`Spawn Time: ${spawnTime}, spawn Gen: ${spawnGen}, spawn Character: ${charName}, spawn User: ${spawnUser}`); // Send the message to the channel
+   // }

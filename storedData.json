@@ -1,0 +1,13 @@
+{
+  "1053239934590406696": {
+    "announceChannel": "<#1202000476657156116>",
+    "maxGen": "11",
+    "maxDate": "24h",
+    "toggleSeperateUserId": true
+  },
+  "642431753302048779": {
+    "maxGen": "25",
+    "announceChannel": "<#1198621512173883469>",
+    "maxDate": "24h"
+  }
+}
