@@ -1,4 +1,4 @@
-# discordBotGaming
+# DiscordBotFetchNewRecords
 bot for my project
 
 ### RegexNotify
@@ -27,8 +27,3 @@ There are multiple commands that can limit what the bot shows and what it does n
 ### Future plans
 while plans for this part of the bot is pretty much only restricting the date which seems rather tricky atm (spawn date is in formats such as '1s', '5m', '20h' or '5d', ...) i want to make this viable in future one way or another.
 
-
-### Why not just pay more attention
-Truth be told another reason why i made this bot is simply because i wanted to improve myself in programming and this was the first idea that came to my mind since there is still a lot of things i dont know how to do.
-Up until now i haven't really used design patterns in my previous jobs so this was a bit of challange to use one and i went with DAO for my json database where i store the data for each server.
-Even now there is still a lot for me to learn but i think this is a good stepping stone.
